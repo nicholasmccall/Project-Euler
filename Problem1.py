@@ -20,6 +20,10 @@
 def sum_multiples(integers, maximum_multiple) -> int:
 
     """
+    For any value from 1 to maximum_multiple where the
+    value is a multiple of one of the integers, sum the
+    value.
+
     :param integers:
     :type integers: list of int
     :param maximum_multiple:
@@ -27,15 +31,15 @@ def sum_multiples(integers, maximum_multiple) -> int:
     :return:
     """
 
-    sum = 0
+    running_sum = 0
 
     for number in range(1, maximum_multiple):
         for divisor in integers:
             if number % divisor == 0:
-                sum += number
+                running_sum += number
                 break
 
-    return sum
+    return running_sum
 
 
 if __name__ == '__main__':
